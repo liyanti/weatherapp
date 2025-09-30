@@ -1,10 +1,9 @@
 .default-bg{
-  background: #295e8c;
-  color: black;
+  background: #204d74;
 }
 
 .day-bg{
-  background: linear-gradient(to bottom right,  #69a0ee, #eeeb3e);
+  background: linear-gradient(to bottom right,  #5ca2df, #0368ff);
 }
 
 .night-bg{
