@@ -16,14 +16,6 @@ const getHumidityDescription = (humidity) => {
   return "Sticky";
 };
 
-const getUVDescription = (uv) => {
-  if (uv < 3) return "Low";
-  if (uv < 6) return "Moderate";
-  if (uv < 8) return "High";
-  if (uv < 11) return "Very high";
-  return "Extreme";
-};
-
 const getWeatherEmoji = (condition) => {
   const text = condition.toLowerCase();
   if (text.includes("cloud")) return "☁️";
@@ -37,7 +29,6 @@ const getWeatherEmoji = (condition) => {
 function WeatherCard({ city, data }) {
   if (!data) return null;
 
-  // waktu lokal
   const localTimestamp = (data.dt + data.timezone) * 1000;
   const localDate = new Date(localTimestamp);
   const dayName = WEEKDAYS[localDate.getUTCDay()];
@@ -45,12 +36,10 @@ function WeatherCard({ city, data }) {
   const minutes = localDate.getUTCMinutes();
   const timePart = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
 
-  // ambil data dari API
   const temperature = Math.round(data.main.temp);
   const condition = data.weather[0].description;
   const humidity = data.main.humidity;
   const windSpeed = data.wind.speed; // m/s
-  const uvIndex = 5; // placeholder karena API ini gak ada UV (butuh One Call API)
 
   return (
     <div className="weather-card">
@@ -66,7 +55,6 @@ function WeatherCard({ city, data }) {
       <div className="right">
         <p><strong>💧 Humidity:</strong> {humidity}% ({getHumidityDescription(humidity)})</p>
         <p><strong>💨 Wind:</strong> {windSpeed} m/s ({getWindDescription(windSpeed)})</p>
-        <p><strong>🔆 UV Index:</strong> {uvIndex} ({getUVDescription(uvIndex)})</p>
       </div>
     </div>
   );
