@@ -2,6 +2,7 @@ import React from "react";
 
 const WEEKDAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
+//helper function
 const getWindDescription = (windKph) => {
   if (windKph < 10) return "Calm";
   if (windKph < 20) return "A little breezy";

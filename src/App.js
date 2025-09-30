@@ -61,6 +61,7 @@ function App() {
     }
   };
 
+  //default baground
   const getBackgroundClass = () => {
     if (!weatherData) return "app-container default-bg";
 
@@ -83,7 +84,7 @@ function App() {
   };
 
   return (
-    <div className={getBackgroundClass()}>
+    <div className={getBackgroundClass()}> 
       <h1>🌤️ Weather Dashboard</h1>
       <div className='search-bar'>
         <input
