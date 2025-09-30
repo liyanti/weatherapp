@@ -3,10 +3,10 @@ import React from "react";
 const WEEKDAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
 const getWindDescription = (windKph) => {
-  if (windKph < 10) return "🌬️ Calm";
-  if (windKph < 20) return "🍃 A little breezy";
-  if (windKph < 30) return "💨 Windy";
-  return "🌪️ Very windy";
+  if (windKph < 10) return "Calm";
+  if (windKph < 20) return "A little breezy";
+  if (windKph < 30) return "Windy";
+  return "Very windy";
 };
 
 const getHumidityDescription = (humidity) => {
@@ -17,11 +17,11 @@ const getHumidityDescription = (humidity) => {
 };
 
 const getUVDescription = (uv) => {
-  if (uv < 3) return "🟢 Low";
-  if (uv < 6) return "🟡 Moderate";
-  if (uv < 8) return "🟠 High";
-  if (uv < 11) return "🔴 Very high";
-  return "☠️ Extreme";
+  if (uv < 3) return "Low";
+  if (uv < 6) return "Moderate";
+  if (uv < 8) return "High";
+  if (uv < 11) return "Very high";
+  return "Extreme";
 };
 
 const getWeatherEmoji = (condition) => {
