@@ -10,10 +10,10 @@ const getWindDescription = (windKph) => {
 };
 
 const getHumidityDescription = (humidity) => {
-  if (humidity < 30) return "🏜️ Dry";
-  if (humidity < 60) return "😊 Comfortable";
-  if (humidity < 80) return "💧 Humid";
-  return "🥵 Sticky";
+  if (humidity < 30) return "Dry";
+  if (humidity < 60) return "Comfortable";
+  if (humidity < 80) return "Humid";
+  return "Sticky";
 };
 
 const getUVDescription = (uv) => {
@@ -65,8 +65,8 @@ function WeatherCard({ city, data }) {
       {/* Right */}
       <div className="right">
         <p><strong>💧 Humidity:</strong> {humidity}% ({getHumidityDescription(humidity)})</p>
-        <p><strong>🌬️ Wind:</strong> {windSpeed} m/s ({getWindDescription(windSpeed)})</p>
-        <p><strong>🌞 UV Index:</strong> {uvIndex} ({getUVDescription(uvIndex)})</p>
+        <p><strong>💨 Wind:</strong> {windSpeed} m/s ({getWindDescription(windSpeed)})</p>
+        <p><strong>🔆 UV Index:</strong> {uvIndex} ({getUVDescription(uvIndex)})</p>
       </div>
     </div>
   );
